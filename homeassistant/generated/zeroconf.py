@@ -220,6 +220,11 @@ ZEROCONF = {
             "name": "brother*"
         }
     ],
+    "_rme-sg._tcp.local.": [
+        {
+            "domain": "etactica"
+        }
+    ],
     "_sonos._tcp.local.": [
         {
             "domain": "sonos"

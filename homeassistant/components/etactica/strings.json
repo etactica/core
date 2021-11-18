@@ -1,0 +1,14 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "confirm_discovery": {
+        "description":"To setup the gateway: {name}, You should visit {hostname} or {hostaddress} or  and choose to enable the Home Assistant integration!\n\n(TODO: provide the mqtt address here? make it a link?)"
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "[%key:common::config_flow::abort::single_instance_allowed%]",
+      "no_devices_found": "[%key:common::config_flow::abort::no_devices_found%]"
+    }
+  }
+}
