@@ -126,6 +126,11 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                     _LOGGER.exception("Unexpected exception")
                     errors["base"] = "unknown"
                 else:
+                    _LOGGER.warning(
+                        "KARL - step user had input and was valid: %s and di: %s",
+                        user_input,
+                        device_info,
+                    )
                     return self.async_create_entry(
                         title=device_info["title"],
                         data={
@@ -136,6 +141,7 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                         },
                     )
 
+        _LOGGER.warning("karl - : step user show form fell through? errs: %s", errors)
         return self.async_show_form(
             step_id="user", data_schema=HOST_SCHEMA, errors=errors
         )
